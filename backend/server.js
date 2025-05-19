@@ -7,11 +7,13 @@ wss.on('connection', (ws) => {
   console.log('🔌 Client connected');
 
   const sendData = () => {
-    const data = {
+    const machines = ['Machine A', 'Machine B', 'Machine C'];
+    const data = machines.map((id) => ({
+      id,
       temperature: (20 + Math.random() * 20).toFixed(2),
       status: Math.random() > 0.8 ? 'FAULT' : 'OPERATIONAL',
-      rpm: Math.floor(Math.random() * 5000)
-    };
+      rpm: Math.floor(Math.random() * 5000),
+    }));
     ws.send(JSON.stringify(data));
   };
 
