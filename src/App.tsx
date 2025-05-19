@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FactoryViewer from './components/FactoryViewer';
 import { useMachineData } from './hooks/useMachineData';
 
 function App() {
-  const { status, temperature, rpm } = useMachineData();
+  const machines = useMachineData();
+  const [selected, setSelected] = useState<string | null>(null);
+
+  const selectedMachine = machines.find((m) => m.id === selected);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <h1 className="text-3xl font-bold text-center mb-6">Smart Factory Digital Twin</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* 3D View */}
+        {/* 3D Viewer */}
         <div className="bg-white rounded-lg shadow-lg p-4">
           <h2 className="text-xl font-semibold mb-4">3D Factory View</h2>
           <FactoryViewer />
@@ -18,9 +21,28 @@ function App() {
         {/* Control Panel */}
         <div className="bg-white rounded-lg shadow-lg p-4">
           <h2 className="text-xl font-semibold mb-4">Control Panel</h2>
-          <p><strong>Status:</strong> <span className={status === 'FAULT' ? 'text-red-600' : 'text-green-600'}>{status}</span></p>
-          <p><strong>Temperature:</strong> {temperature}°C</p>
-          <p><strong>RPM:</strong> {rpm}</p>
+          <div className="space-y-2">
+            {machines.map((m) => (
+              <button
+                key={m.id}
+                className={`block w-full px-4 py-2 border rounded ${
+                  m.id === selected ? 'bg-blue-100' : 'bg-gray-50'
+                }`}
+                onClick={() => setSelected(m.id)}
+              >
+                {m.id}
+              </button>
+            ))}
+          </div>
+
+          {selectedMachine && (
+            <div className="mt-4">
+              <p><strong>Status:</strong> <span className={selectedMachine.status === 'FAULT' ? 'text-red-600' : 'text-green-600'}>
+                {selectedMachine.status}</span></p>
+              <p><strong>Temperature:</strong> {selectedMachine.temperature}°C</p>
+              <p><strong>RPM:</strong> {selectedMachine.rpm}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
