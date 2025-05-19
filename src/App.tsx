@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FactoryViewer from './components/FactoryViewer';
 import { useMachineData } from './hooks/useMachineData';
+import TemperatureChart from './components/TemperatureChart';
 
 function App() {
   const machines = useMachineData();
@@ -36,12 +37,15 @@ function App() {
           </div>
 
           {selectedMachine && (
-            <div className="mt-4">
-              <p><strong>Status:</strong> <span className={selectedMachine.status === 'FAULT' ? 'text-red-600' : 'text-green-600'}>
-                {selectedMachine.status}</span></p>
-              <p><strong>Temperature:</strong> {selectedMachine.temperature}°C</p>
-              <p><strong>RPM:</strong> {selectedMachine.rpm}</p>
-            </div>
+            <>
+              <div className="mt-4">
+                <p><strong>Status:</strong> <span className={selectedMachine.status === 'FAULT' ? 'text-red-600' : 'text-green-600'}>
+                  {selectedMachine.status}</span></p>
+                <p><strong>Temperature:</strong> {selectedMachine.temperature}°C</p>
+                <p><strong>RPM:</strong> {selectedMachine.rpm}</p>
+              </div>
+              <TemperatureChart machineId={selectedMachine.id} temperature={selectedMachine.temperature} />
+            </>
           )}
         </div>
       </div>

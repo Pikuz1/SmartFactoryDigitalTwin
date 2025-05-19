@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# 🏭 Smart Factory Digital Twin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive digital twin of a smart factory built with **React Hooks**, **Chart.js**, **WebSocket**, and **Three.js**. This project simulates a smart manufacturing environment in real-time with dynamic 3D visualization, control panel, and data monitoring.
 
-## Available Scripts
+## 🎥 Demo
 
-In the project directory, you can run:
+https://www.loom.com/share/70bc9d4b982b4be69777ccd8878195a8?sid=5c0557e3-f190-452a-a7be-0f89e9115107
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React Hooks** – State management and side effects
+- **Chart.js** – Real-time visual representation of factory KPIs
+- **WebSocket** – Live updates and bi-directional communication
+- **Three.js** – Interactive 3D visualization of the factory environment
 
-### `npm test`
+## ✨ Key Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Real-time control panel for managing factory units
+- 3D visualization of machinery status (color-coded by state)
+- Live updates through WebSocket communication
+- Historical data tracking and graphical analytics using Chart.js
+- Smooth UI interactions and animations
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧪 Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repo:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/Pikuz1/SmartFactoryDigitalTwin.git
+cd SmartFactoryDigitalTwin 
+```
+2. Install dependencies:
 
-### `npm run eject`
+```bash
+npm install
+```
+3. Running backend:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+cd SmartFactoryDigitalTwin/backend
+node server.js
+```
+4. Running frontend:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+cd SmartFactoryDigitalTwin
+npm start
+```
